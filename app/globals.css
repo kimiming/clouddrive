@@ -1,0 +1,106 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: #f5f6f8; }
+
+.main-content {
+  padding: 16px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 576px) {
+  .main-content { padding: 10px; }
+}
+
+.stat-card { border-radius: 14px; }
+.stat-card .ant-statistic-title { font-size: 13px; }
+.stat-card .ant-statistic-content { font-size: 22px; }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+/* 文件卡片 */
+.file-card {
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+}
+.file-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+.file-cover {
+  height: 132px;
+  background: #f0f2f5;
+  overflow: hidden;
+  cursor: pointer;
+}
+.file-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.file-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8c8c8c;
+}
+.file-cover-placeholder.video {
+  background: linear-gradient(135deg, #722ed1, #1677ff);
+}
+.file-cover-placeholder.audio { background: #fff7e6; color: #fa8c16; }
+.file-cover-placeholder.plain { background: #f0f2f5; }
+
+/* 卡片底部操作：三个按钮等宽平分，永远不会溢出 */
+.file-card .ant-card-actions {
+  background: #fafafa;
+}
+.file-card .ant-card-actions > li {
+  margin: 0;
+  padding: 8px 0;
+}
+.file-card .ant-card-actions > li > span {
+  display: flex;
+  justify-content: center;
+}
+.card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #595959;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.card-action:hover { color: #1677ff; }
+.card-action.danger:hover { color: #ff4d4f; }
+.card-action.disabled { color: #bfbfbf; cursor: not-allowed; }
+@media (max-width: 576px) {
+  .file-cover { height: 104px; }
+  .card-action { font-size: 12px; gap: 2px; }
+}
+
+/* 表格容器 */
+.table-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+}
+.table-card .ant-table-wrapper { overflow-x: auto; }
+
+/* 上传区 */
+.ant-upload-wrapper .ant-upload-drag { border-radius: 14px; }

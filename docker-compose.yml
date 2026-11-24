@@ -1,0 +1,16 @@
+services:
+  web:
+    build: .
+    container_name: clouddrive
+    restart: unless-stopped
+    ports:
+      - "80:3000"
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - DATA_DIR=/app/data/files
+      - KEYS_FILE=/app/ssh/authorized_keys
+    volumes:
+      - ./data/files:/app/data/files
+      - /root/.ssh/authorized_keys:/app/ssh/authorized_keys
